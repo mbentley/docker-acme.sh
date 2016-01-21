@@ -1,12 +1,10 @@
 FROM debian:jessie
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
 
-RUN apt-get update && apt-get install -y git
-RUN git clone https://github.com/letsencrypt/letsencrypt &&\
-  cd letsencrypt &&\
- ./letsencrypt-auto --help &&\
-  cd &&\
-  rm -rf letsencrypt
+RUN apt-get update && apt-get install -y curl openssl vim-common &&\
+  rm -rf /var/lib/apt/lists/* &&\
+  mkdir /le &&\
+  curl -s "https://raw.githubusercontent.com/Neilpang/le/master/le.sh" > /le/le.sh &&\
+  chmod +x /le/le.sh
 
-ENTRYPOINT ["/root/.local/share/letsencrypt/bin/letsencrypt"]
-CMD ["--help"]
+ENTRYPOINT ["/le/le.sh"]
