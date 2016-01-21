@@ -8,7 +8,7 @@ To pull this image:
 `docker pull mbentley/letsencrypt`
 
 Example usage:
-`docker run -it --rm mbentley/letsencrypt:latest`
+`docker run -it --rm -v /data/le:/root/.le mbentley/letsencrypt:latest`
 
 By default, this displays the help for letsencrypt.
 
