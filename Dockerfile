@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
 
-ENV LE_VERSION 2.3.0
+ENV LE_VERSION 2.7.8
 
 RUN apt-get update && apt-get install -y curl jq openssl python-pip vim-common &&\
   pip install awscli &&\
