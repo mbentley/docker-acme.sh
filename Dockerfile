@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
 
 ENV LE_VERSION 2.7.8
