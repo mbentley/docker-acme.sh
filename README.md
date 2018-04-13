@@ -7,15 +7,19 @@ based off of debian:jessie
 To pull this image:
 `docker pull mbentley/letsencrypt`
 
-Example usage:
+## Example usage:
 
-`docker run -it --rm -v ~/letsencrypt:/root/.acme.sh mbentley/letsencrypt`
+```
+docker run -it --rm \
+  -v ~/letsencrypt:/root/.acme.sh \
+  mbentley/letsencrypt
+```
 
 By default, this displays the help.  For additional documentation, see https://github.com/Neilpang/acme.sh/blob/master/README.md
 
-Examples with the `dns_aws` [https://github.com/Neilpang/acme.sh/tree/master/dnsapi](DNS response plugin):
+### Examples with the `dns_aws` [DNS response plugin](https://github.com/Neilpang/acme.sh/tree/master/dnsapi):
 
-### Create new cert
+#### Create new cert
 ```
 docker run -it --rm \
   -v ~/letsencrypt:/root/.acme.sh \
@@ -25,7 +29,7 @@ docker run -it --rm \
   --issue --domain '*.example.com' --dns dns_aws
 ```
 
-### Renew a cert
+#### Renew a cert
 ```
 docker run -it --rm \
   -v ~/letsencrypt:/root/.acme.sh \
