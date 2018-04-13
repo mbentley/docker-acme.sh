@@ -2,7 +2,7 @@ mbentley/letsencrypt
 ====================
 
 docker image for letsencrypt (https://github.com/Neilpang/acme.sh)
-based off of debian:jessie
+based off of debian:stretch
 
 To pull this image:
 `docker pull mbentley/letsencrypt`
